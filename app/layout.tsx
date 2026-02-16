@@ -1,11 +1,12 @@
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(props: LayoutProps<'/'>) {
+  const { children, sidebar } = props;
+
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang='en'>
+      <body>
+        {sidebar}
+        {children}
+      </body>
     </html>
   );
 }
